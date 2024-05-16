@@ -4,7 +4,6 @@ import ChevronDown from "../icons/ChevronDown";
 import ChevronUp from "../icons/ChevronUp";
 import { useState } from "react";
 
-/* eslint-disable react/jsx-key */
 export default function MenuItemPriceProps({ name, addLabel, props, setProps }) {
 
     const [isOpen, setIsOpen] = useState(false)
@@ -45,7 +44,7 @@ export default function MenuItemPriceProps({ name, addLabel, props, setProps }) 
 
             <div className={isOpen ? 'block' : 'hidden'}>
                 {props?.length > 0 && props.map((size, index) => (
-                    <div className="flex items-end gap-2">
+                    <div key={index} className="flex items-end gap-2">
                         <div>
                             <label>Name</label>
                             <input type="text" placeholder="Size name" value={size.name}
